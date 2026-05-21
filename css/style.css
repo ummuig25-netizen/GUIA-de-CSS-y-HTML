@@ -1,0 +1,193 @@
+/* =========================================================================
+   STYLE.CSS — Hoja de estilos del menú principal (index.html)
+   ========================================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #2d3748;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   CABECERA
+   ========================================== */
+.cabecera {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: white;
+    padding: 50px 40px;
+    text-align: center;
+}
+
+.cabecera h1 {
+    font-size: 2.4em;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.cabecera p {
+    font-size: 1.1em;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   CONTENEDOR PRINCIPAL
+   ========================================== */
+.contenedor-principal {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* ==========================================
+   BLOQUES DE TEMA
+   ========================================== */
+.bloque-tema {
+    background: white;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.titulo-bloque {
+    font-size: 1.3em;
+    color: #1a1a2e;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* ==========================================
+   TARJETAS DE NAVEGACIÓN
+   ========================================== */
+.tarjeta {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: inherit;
+    border-left: 5px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #f7fafc;
+}
+
+.tarjeta:last-child {
+    margin-bottom: 0;
+}
+
+.tarjeta:hover {
+    transform: translateX(6px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.tarjeta-icono {
+    font-size: 2em;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.tarjeta-info h3 {
+    font-size: 1.1em;
+    color: #1a1a2e;
+    margin-bottom: 4px;
+}
+
+.tarjeta-info p {
+    font-size: 0.88em;
+    color: #718096;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Colores de borde por nivel */
+.tarjeta-html       { border-left-color: #3498db; }
+.tarjeta-basico     { border-left-color: #27ae60; }
+.tarjeta-intermedio { border-left-color: #f39c12; }
+.tarjeta-avanzado   { border-left-color: #e74c3c; }
+.tarjeta-definitiva { border-left-color: #8e44ad; }
+
+/* Etiquetas de nivel */
+.etiqueta {
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: bold;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-right: 5px;
+    letter-spacing: 0.3px;
+}
+
+.nivel-basico     { background-color: #d4edda; color: #155724; }
+.nivel-intermedio { background-color: #fff3cd; color: #856404; }
+.nivel-avanzado   { background-color: #f8d7da; color: #721c24; }
+.nivel-completo   { background-color: #e9d6f5; color: #6c1e9e; }
+.nivel-nuevo      { background-color: #cce5ff; color: #004085; }
+
+/* ==========================================
+   BLOQUE RESUMEN RÁPIDO
+   ========================================== */
+.bloque-resumen {
+    border-left: 5px solid #f39c12;
+}
+
+.grid-resumen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.chip-concepto {
+    background-color: #1a1a2e;
+    color: #e2e8f0;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.82em;
+    font-family: 'Courier New', monospace;
+    line-height: 1.4;
+    border: 1px solid #2d3748;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    cursor: default;
+}
+
+.chip-concepto:hover {
+    background-color: #0f3460;
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+   ========================================== */
+.pie {
+    background-color: #2d3748;
+    color: #a0aec0;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 600px) {
+    .cabecera h1 { font-size: 1.6em; }
+    .cabecera { padding: 30px 20px; }
+    .tarjeta { flex-direction: column; gap: 10px; }
+    .chip-concepto { font-size: 0.78em; }
+}

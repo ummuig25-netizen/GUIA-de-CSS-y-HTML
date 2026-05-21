@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de HTML Semántico y Estructuras</title>
+    <link rel="stylesheet" href="../css/html-semantico.css">
+</head>
+<body>
+
+    <!-- =====================================================
+         ESTRUCTURA SEMÁNTICA DE HTML5
+         ===================================================== -->
+
+    <header class="cabecera-principal">
+        <h1>📄 Guía Completa de HTML Semántico</h1>
+        <p>Todo lo que necesitas saber sobre la estructura y las etiquetas de HTML para tu examen.</p>
+        <nav class="nav-principal">
+            <a href="#estructura">Estructura</a>
+            <a href="#textos">Textos</a>
+            <a href="#listas">Listas</a>
+            <a href="#enlaces">Links e Imágenes</a>
+            <a href="#tablas">Tablas</a>
+            <a href="#formularios">Formularios</a>
+            <a href="#inline">Etiquetas Inline</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- SECCIÓN 1: ESTRUCTURA SEMÁNTICA -->
+        <section class="seccion" id="estructura">
+            <h2>1. Estructura Semántica de HTML5</h2>
+            <p>Las etiquetas semánticas le dicen al navegador (y a Google) qué <strong>función</strong> tiene cada parte de la página. No son solo cajas: tienen significado.</p>
+
+            <div class="tabla-semantica">
+                <div class="fila-semantica cabecera-tabla">
+                    <span>Etiqueta</span>
+                    <span>Para qué sirve</span>
+                    <span>Ejemplo de uso</span>
+                </div>
+                <div class="fila-semantica">
+                    <code>&lt;header&gt;</code>
+                    <span>Cabecera de la página o de una sección</span>
+                    <span>Logo, título, menú de navegación</span>
+                </div>
+                <div class="fila-semantica">
+                    <code>&lt;nav&gt;</code>
+                    <span>Bloque de navegación con enlaces</span>
+                    <span>Menú principal, menú de pie</span>
+                </div>
+                <div class="fila-semantica">
+                    <code>&lt;main&gt;</code>
+                    <span>Contenido principal (solo uno por página)</span>
+                    <span>El cuerpo central de la web</span>
+                </div>
+                <div class="fila-semantica">
+                    <code>&lt;section&gt;</code>
+                    <span>Sección temática del contenido</span>
+                    <span>"Sobre nosotros", "Servicios"</span>
+                </div>
+                <div class="fila-semantica">
+                    <code>&lt;article&gt;</code>
+                    <span>Contenido independiente y reutilizable</span>
+                    <span>Una entrada de blog, una tarjeta de producto</span>
+                </div>
+                <div class="fila-semantica">
+                    <code>&lt;aside&gt;</code>
+                    <span>Contenido secundario o relacionado</span>
+                    <span>Barra lateral, publicidad, widget</span>
+                </div>
+                <div class="fila-semantica">
+                    <code>&lt;footer&gt;</code>
+                    <span>Pie de página o de una sección</span>
+                    <span>Copyright, enlaces legales, redes</span>
+                </div>
+                <div class="fila-semantica">
+                    <code>&lt;div&gt;</code>
+                    <span>Contenedor genérico SIN significado (no semántico)</span>
+                    <span>Agrupar elementos para aplicar CSS</span>
+                </div>
+            </div>
+
+            <!-- Diagrama visual de la estructura -->
+            <h3>Así se ve la estructura de una página típica:</h3>
+            <div class="diagrama-estructura">
+                <div class="diag-header">&lt;header&gt; — Cabecera</div>
+                <div class="diag-nav">&lt;nav&gt; — Navegación</div>
+                <div class="diag-cuerpo">
+                    <div class="diag-main">&lt;main&gt; — Contenido principal</div>
+                    <div class="diag-aside">&lt;aside&gt; — Barra lateral</div>
+                </div>
+                <div class="diag-footer">&lt;footer&gt; — Pie de página</div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: ETIQUETAS DE TEXTO -->
+        <section class="seccion" id="textos">
+            <h2>2. Etiquetas de Texto y Cabeceras</h2>
+
+            <h3>Cabeceras (Headings): h1 al h6</h3>
+            <p>Solo debe haber <strong>UN &lt;h1&gt;</strong> por página. Los demás se usan en orden descendente.</p>
+            <div class="demo-headings">
+                <h1 class="demo-h">h1 — Título principal (el más grande)</h1>
+                <h2 class="demo-h">h2 — Subtítulo de sección</h2>
+                <h3 class="demo-h">h3 — Subtítulo de subsección</h3>
+                <h4 class="demo-h">h4 — Nivel 4</h4>
+                <h5 class="demo-h">h5 — Nivel 5</h5>
+                <h6 class="demo-h">h6 — Nivel 6 (el más pequeño)</h6>
+            </div>
+
+            <h3 style="margin-top: 20px;">Etiquetas de texto importantes:</h3>
+            <div class="demo-textos">
+                <p><strong>&lt;strong&gt;</strong> — Texto importante en <strong>negrita</strong> (tiene significado semántico).</p>
+                <p><em>&lt;em&gt;</em> — Texto con <em>énfasis en cursiva</em> (tiene significado semántico).</p>
+                <p><b>&lt;b&gt;</b> — Solo <b>negrita visual</b>, sin significado semántico especial.</p>
+                <p><i>&lt;i&gt;</i> — Solo <i>cursiva visual</i>, sin significado semántico especial.</p>
+                <p><mark>&lt;mark&gt;</mark> — Texto <mark>resaltado</mark> como con marcador.</p>
+                <p><del>&lt;del&gt;</del> — Texto <del>tachado</del> (borrado).</p>
+                <p><ins>&lt;ins&gt;</ins> — Texto <ins>subrayado</ins> (añadido).</p>
+                <p><small>&lt;small&gt;</small> — Texto <small>más pequeño</small> (notas al pie).</p>
+                <p><code>&lt;code&gt;</code> — Para mostrar <code>código informático</code>.</p>
+                <p>&lt;br&gt; — Salto de línea<br>Como este.</p>
+                <p>&lt;hr&gt; — Línea horizontal divisoria:</p>
+                <hr>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: LISTAS -->
+        <section class="seccion" id="listas">
+            <h2>3. Listas</h2>
+            <div class="demo-listas">
+                <div class="tipo-lista">
+                    <h3>&lt;ul&gt; — Lista desordenada (con puntos)</h3>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+
+                <div class="tipo-lista">
+                    <h3>&lt;ol&gt; — Lista ordenada (con números)</h3>
+                    <ol>
+                        <li>Primero aprende HTML</li>
+                        <li>Luego aprende CSS</li>
+                        <li>Después JavaScript</li>
+                    </ol>
+                </div>
+
+                <div class="tipo-lista">
+                    <h3>&lt;dl&gt; — Lista de definiciones</h3>
+                    <dl>
+                        <dt>HTML</dt>
+                        <dd>Lenguaje de marcado para estructurar la web.</dd>
+                        <dt>CSS</dt>
+                        <dd>Lenguaje de estilos para darle apariencia a la web.</dd>
+                    </dl>
+                </div>
+            </div>
+            <p>Todos los elementos de lista van dentro de <code>&lt;li&gt;</code>. Las listas pueden anidarse unas dentro de otras.</p>
+        </section>
+
+        <!-- SECCIÓN 4: ENLACES E IMÁGENES -->
+        <section class="seccion" id="enlaces">
+            <h2>4. Enlaces e Imágenes</h2>
+
+            <h3>Etiqueta &lt;a&gt; — Enlace (Anchor)</h3>
+            <div class="demo-enlaces">
+                <p><a href="https://www.google.com" target="_blank">Enlace externo (abre en nueva pestaña)</a> — usa <code>target="_blank"</code></p>
+                <p><a href="#estructura">Enlace interno a sección</a> — usa <code>href="#id"</code></p>
+                <p><a href="basico.html">Enlace a otro archivo HTML</a></p>
+                <p><a href="mailto:correo@ejemplo.com">Enlace de email</a> — usa <code>href="mailto:..."</code></p>
+                <p><a href="tel:+34612345678">Enlace de teléfono</a> — usa <code>href="tel:..."</code></p>
+            </div>
+            <p>Atributos importantes de <code>&lt;a&gt;</code>:</p>
+            <ul>
+                <li><code>href</code> — La URL de destino (obligatorio)</li>
+                <li><code>target="_blank"</code> — Abre en nueva pestaña</li>
+                <li><code>title</code> — Texto emergente al pasar el ratón</li>
+            </ul>
+
+            <h3 style="margin-top: 20px;">Etiqueta &lt;img&gt; — Imagen</h3>
+            <p>La etiqueta <code>&lt;img&gt;</code> es de <strong>cierre automático</strong> (no necesita <code>&lt;/img&gt;</code>).</p>
+            <div class="demo-img-codigo">
+                <code>&lt;img src="ruta/imagen.jpg" alt="Descripción de la imagen" width="300"&gt;</code>
+            </div>
+            <ul>
+                <li><code>src</code> — La ruta de la imagen (obligatorio)</li>
+                <li><code>alt</code> — Texto alternativo si la imagen no carga. <strong>¡Muy importante para accesibilidad!</strong></li>
+                <li><code>width</code> / <code>height</code> — Dimensiones en píxeles</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN 5: TABLAS -->
+        <section class="seccion" id="tablas">
+            <h2>5. Tablas HTML</h2>
+            <p>Estructura de una tabla completa:</p>
+            <div class="demo-codigo-tabla">
+<pre><code>&lt;table&gt;
+  &lt;thead&gt;                    ← Cabecera de la tabla
+    &lt;tr&gt;                     ← Fila (Table Row)
+      &lt;th&gt;Nombre&lt;/th&gt;        ← Celda cabecera (Table Header)
+      &lt;th&gt;Edad&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;                    ← Cuerpo de la tabla
+    &lt;tr&gt;
+      &lt;td&gt;Ana&lt;/td&gt;           ← Celda normal (Table Data)
+      &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;                    ← Pie de la tabla (opcional)
+    &lt;tr&gt;
+      &lt;td colspan="2"&gt;Total: 1 persona&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+            </div>
+
+            <h3>Resultado visual:</h3>
+            <table class="tabla-ejemplo">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Edad</th>
+                        <th>Ciudad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ana García</td>
+                        <td>25</td>
+                        <td>Madrid</td>
+                    </tr>
+                    <tr>
+                        <td>Carlos López</td>
+                        <td>30</td>
+                        <td>Barcelona</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total: 2 personas</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p>Atributos de celda: <code>colspan</code> (ocupa N columnas) y <code>rowspan</code> (ocupa N filas).</p>
+        </section>
+
+        <!-- SECCIÓN 6: FORMULARIOS -->
+        <section class="seccion" id="formularios">
+            <h2>6. Formularios HTML</h2>
+            <p>Los formularios permiten al usuario enviar datos. La etiqueta <code>&lt;form&gt;</code> los contiene todos.</p>
+            <p>Atributos de <code>&lt;form&gt;</code>: <code>action</code> (a dónde se envían los datos) y <code>method</code> (<code>GET</code> o <code>POST</code>).</p>
+
+            <form class="formulario-ejemplo" onsubmit="return false;">
+                <!-- INPUT DE TEXTO -->
+                <div class="campo-form">
+                    <label for="nombre">Nombre: <code>&lt;input type="text"&gt;</code></label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre">
+                </div>
+
+                <!-- INPUT DE EMAIL -->
+                <div class="campo-form">
+                    <label for="email">Email: <code>&lt;input type="email"&gt;</code></label>
+                    <input type="email" id="email" name="email" placeholder="correo@ejemplo.com">
+                </div>
+
+                <!-- INPUT DE CONTRASEÑA -->
+                <div class="campo-form">
+                    <label for="password">Contraseña: <code>&lt;input type="password"&gt;</code></label>
+                    <input type="password" id="password" name="password" placeholder="••••••••">
+                </div>
+
+                <!-- INPUT DE NÚMERO -->
+                <div class="campo-form">
+                    <label for="edad">Edad: <code>&lt;input type="number"&gt;</code></label>
+                    <input type="number" id="edad" name="edad" min="0" max="120">
+                </div>
+
+                <!-- SELECT (DESPLEGABLE) -->
+                <div class="campo-form">
+                    <label for="nivel">Nivel: <code>&lt;select&gt;</code></label>
+                    <select id="nivel" name="nivel">
+                        <option value="">-- Elige --</option>
+                        <option value="basico">Básico</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                    </select>
+                </div>
+
+                <!-- TEXTAREA -->
+                <div class="campo-form">
+                    <label for="comentario">Comentario: <code>&lt;textarea&gt;</code></label>
+                    <textarea id="comentario" name="comentario" rows="3" placeholder="Escribe aquí..."></textarea>
+                </div>
+
+                <!-- RADIO BUTTONS -->
+                <div class="campo-form">
+                    <label>Género: <code>&lt;input type="radio"&gt;</code></label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="genero" value="m"> Masculino</label>
+                        <label><input type="radio" name="genero" value="f"> Femenino</label>
+                        <label><input type="radio" name="genero" value="o"> Otro</label>
+                    </div>
+                </div>
+
+                <!-- CHECKBOX -->
+                <div class="campo-form">
+                    <label>Acepto términos: <code>&lt;input type="checkbox"&gt;</code></label>
+                    <input type="checkbox" id="terminos" name="terminos">
+                    <label for="terminos">Sí, acepto los términos y condiciones</label>
+                </div>
+
+                <!-- BOTONES -->
+                <div class="campo-form botones-form">
+                    <button type="submit" class="btn-submit">Enviar formulario <code>&lt;button type="submit"&gt;</code></button>
+                    <button type="reset" class="btn-reset">Limpiar <code>&lt;button type="reset"&gt;</code></button>
+                </div>
+            </form>
+
+            <h3 style="margin-top: 20px;">Atributos comunes de inputs:</h3>
+            <ul>
+                <li><code>required</code> — Campo obligatorio</li>
+                <li><code>placeholder</code> — Texto de ayuda dentro del campo</li>
+                <li><code>disabled</code> — Campo desactivado</li>
+                <li><code>readonly</code> — Solo lectura, no se puede editar</li>
+                <li><code>name</code> — Nombre del campo al enviarlo (obligatorio para que se envíe)</li>
+                <li><code>id</code> — Para enlazarlo con su <code>&lt;label for="..."&gt;</code></li>
+                <li><code>value</code> — Valor por defecto o valor a enviar</li>
+            </ul>
+        </section>
+
+        <!-- SECCIÓN 7: ETIQUETAS INLINE -->
+        <section class="seccion" id="inline">
+            <h2>7. Etiquetas Inline vs Block</h2>
+            <h3>Etiquetas de bloque (block):</h3>
+            <p>Ocupan toda la línea. Van una debajo de la otra.</p>
+            <div class="lista-etiquetas">
+                <code>&lt;div&gt;</code> <code>&lt;p&gt;</code> <code>&lt;h1&gt;-&lt;h6&gt;</code>
+                <code>&lt;ul&gt;</code> <code>&lt;ol&gt;</code> <code>&lt;li&gt;</code>
+                <code>&lt;table&gt;</code> <code>&lt;form&gt;</code> <code>&lt;section&gt;</code>
+                <code>&lt;header&gt;</code> <code>&lt;footer&gt;</code> <code>&lt;main&gt;</code>
+                <code>&lt;article&gt;</code> <code>&lt;aside&gt;</code> <code>&lt;nav&gt;</code>
+                <code>&lt;blockquote&gt;</code> <code>&lt;pre&gt;</code>
+            </div>
+
+            <h3 style="margin-top: 15px;">Etiquetas inline:</h3>
+            <p>Solo ocupan su propio espacio. Van una al lado de la otra.</p>
+            <div class="lista-etiquetas inline">
+                <code>&lt;span&gt;</code> <code>&lt;a&gt;</code> <code>&lt;strong&gt;</code>
+                <code>&lt;em&gt;</code> <code>&lt;img&gt;</code> <code>&lt;input&gt;</code>
+                <code>&lt;label&gt;</code> <code>&lt;button&gt;</code> <code>&lt;code&gt;</code>
+                <code>&lt;mark&gt;</code> <code>&lt;small&gt;</code> <code>&lt;br&gt;</code>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+        <p>📚 Guía de HTML Semántico — Para estudiar y consultar cuando necesites.</p>
+    </footer>
+
+</body>
+</html>

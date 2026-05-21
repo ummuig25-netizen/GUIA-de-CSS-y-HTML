@@ -1,0 +1,526 @@
+/* =========================================================================
+   GUÍA DE HTML SEMÁNTICO - html-semantico.css
+   ========================================================================= */
+
+/* RESET Y BASE */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8;
+    color: #2d3748;
+    line-height: 1.7;
+}
+
+code {
+    background-color: #edf2f7;
+    color: #c0392b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.88em;
+    font-family: 'Courier New', monospace;
+}
+
+pre {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+    font-size: inherit;
+}
+
+h1, h2, h3 { line-height: 1.3; }
+h3 { margin: 15px 0 8px; color: #4a5568; }
+ul, ol { padding-left: 25px; }
+li { margin-bottom: 5px; }
+p { margin-bottom: 10px; }
+
+/* ==========================================
+   CABECERA PRINCIPAL
+   ========================================== */
+.cabecera-principal {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    color: white;
+    padding: 40px;
+    text-align: center;
+}
+
+.cabecera-principal h1 {
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.cabecera-principal p {
+    font-size: 1.1em;
+    opacity: 0.85;
+    margin-bottom: 20px;
+}
+
+/* Barra de navegación dentro del header */
+.nav-principal {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.nav-principal a {
+    color: white;
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.15);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
+}
+
+.nav-principal a:hover {
+    background-color: rgba(255,255,255,0.35);
+}
+
+/* ==========================================
+   SECCIONES
+   ========================================== */
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.seccion {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+    border-left: 5px solid #3498db;
+}
+
+.seccion h2 {
+    color: #1a1a2e;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+/* ==========================================
+   SECCIÓN 1: TABLA SEMÁNTICA
+   ========================================== */
+.tabla-semantica {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    margin: 15px 0;
+}
+
+.fila-semantica {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.fila-semantica:last-child {
+    border-bottom: none;
+}
+
+.fila-semantica span,
+.fila-semantica code {
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #e2e8f0;
+    font-size: 0.9em;
+}
+
+.fila-semantica span:last-child,
+.fila-semantica code:last-child {
+    border-right: none;
+}
+
+.cabecera-tabla {
+    background-color: #2d3748;
+    color: white;
+    font-weight: bold;
+}
+
+.cabecera-tabla span {
+    color: white;
+    background: none;
+}
+
+.fila-semantica:nth-child(even):not(.cabecera-tabla) {
+    background-color: #f7fafc;
+}
+
+/* Diagrama visual de estructura */
+.diagrama-estructura {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.diag-header, .diag-nav, .diag-footer {
+    padding: 12px;
+    border-radius: 6px;
+    color: white;
+}
+
+.diag-header { background-color: #2980b9; }
+.diag-nav    { background-color: #8e44ad; }
+.diag-footer { background-color: #7f8c8d; }
+
+.diag-cuerpo {
+    display: flex;
+    gap: 6px;
+}
+
+.diag-main {
+    flex: 3;
+    background-color: #27ae60;
+    color: white;
+    padding: 20px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.diag-aside {
+    flex: 1;
+    background-color: #e67e22;
+    color: white;
+    padding: 20px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* ==========================================
+   SECCIÓN 2: HEADINGS Y TEXTOS
+   ========================================== */
+.demo-headings {
+    background-color: #f7fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e0;
+}
+
+/* Resetear los h1-h6 dentro del demo para que no afecten al diseño global */
+.demo-h {
+    color: #2d3748 !important;
+    border: none !important;
+    padding: 4px 0 !important;
+    margin: 2px 0 !important;
+}
+
+.demo-textos {
+    background-color: #f7fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e0;
+    margin-top: 10px;
+}
+
+.demo-textos p {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.demo-textos p:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+mark {
+    background-color: #ffd32a;
+    padding: 0 3px;
+    border-radius: 2px;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid #cbd5e0;
+    margin: 10px 0;
+}
+
+/* ==========================================
+   SECCIÓN 3: LISTAS
+   ========================================== */
+.demo-listas {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.tipo-lista {
+    flex: 1;
+    min-width: 200px;
+    background-color: #f7fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e0;
+}
+
+.tipo-lista h3 {
+    color: #2980b9;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+}
+
+dl dt {
+    font-weight: bold;
+    color: #2980b9;
+    margin-top: 6px;
+}
+
+dl dd {
+    margin-left: 15px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* ==========================================
+   SECCIÓN 4: ENLACES E IMÁGENES
+   ========================================== */
+.demo-enlaces {
+    background-color: #f7fafc;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px dashed #cbd5e0;
+    margin: 10px 0;
+}
+
+.demo-enlaces a {
+    color: #2980b9;
+    font-weight: bold;
+}
+
+.demo-enlaces p {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 8px;
+}
+
+.demo-img-codigo {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin: 10px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.demo-img-codigo code {
+    background: none;
+    color: #cdd6f4;
+    padding: 0;
+}
+
+/* ==========================================
+   SECCIÓN 5: TABLAS
+   ========================================== */
+.demo-codigo-tabla {
+    margin: 10px 0;
+}
+
+.tabla-ejemplo {
+    width: 100%;
+    border-collapse: collapse; /* Junta los bordes de las celdas */
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+/* Celdas de cabecera */
+.tabla-ejemplo th {
+    background-color: #2d3748;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Celdas normales */
+.tabla-ejemplo td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Filas alternas de color */
+.tabla-ejemplo tbody tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+.tabla-ejemplo tbody tr:hover {
+    background-color: #ebf4fd;
+}
+
+/* Pie de tabla */
+.tabla-ejemplo tfoot td {
+    background-color: #edf2f7;
+    font-weight: bold;
+    color: #4a5568;
+}
+
+/* ==========================================
+   SECCIÓN 6: FORMULARIOS
+   ========================================== */
+.formulario-ejemplo {
+    background-color: #f7fafc;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.campo-form {
+    margin-bottom: 15px;
+}
+
+.campo-form label {
+    display: block;
+    font-weight: bold;
+    color: #4a5568;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+/* Estilos para inputs de texto, email, password, number */
+.campo-form input[type="text"],
+.campo-form input[type="email"],
+.campo-form input[type="password"],
+.campo-form input[type="number"],
+.campo-form select,
+.campo-form textarea {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    border: 2px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    background-color: white;
+}
+
+/* Efecto al hacer clic (focus) */
+.campo-form input:focus,
+.campo-form select:focus,
+.campo-form textarea:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+}
+
+.radio-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.botones-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+/* Botón de enviar */
+.btn-submit {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-submit:hover { background-color: #219150; }
+
+/* Botón de limpiar */
+.btn-reset {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-reset:hover { background-color: #c0392b; }
+
+/* ==========================================
+   SECCIÓN 7: ETIQUETAS INLINE vs BLOCK
+   ========================================== */
+.lista-etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #fff5f5;
+    border-radius: 8px;
+    border: 2px solid #fed7d7;
+}
+
+.lista-etiquetas code {
+    background-color: #c0392b;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.lista-etiquetas.inline {
+    background-color: #f0fff4;
+    border-color: #c6f6d5;
+}
+
+.lista-etiquetas.inline code {
+    background-color: #27ae60;
+    color: white;
+}
+
+/* ==========================================
+   PIE DE PÁGINA
+   ========================================== */
+.pie-pagina {
+    background-color: #2d3748;
+    color: #a0aec0;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 0.9em;
+}

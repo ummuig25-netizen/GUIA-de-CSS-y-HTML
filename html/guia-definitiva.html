@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Guía Definitiva de CSS</title>
+    <link rel="stylesheet" href="../css/guia-definitiva.css">
+</head>
+<body>
+
+    <header>
+        <h1>La Guía Definitiva de CSS 📘</h1>
+        <p>Un manual completo para entender cómo funciona CSS de principio a fin.</p>
+    </header>
+
+    <main>
+        <!-- SECCIÓN 1: SELECTORES -->
+        <section class="seccion-guia">
+            <h2>1. ¿Cómo seleccionamos elementos? (Los Selectores)</h2>
+            <p>Para darle estilo a algo en HTML, primero CSS necesita saber a quién. Así se hace:</p>
+            
+            <div class="ejemplo">
+                <p>Soy una etiqueta <code>&lt;p&gt;</code> normal. CSS me selecciona solo escribiendo <code>p { ... }</code></p>
+                <p class="mi-clase">Yo tengo una clase (<code>class="mi-clase"</code>). CSS me selecciona con un punto: <code>.mi-clase { ... }</code></p>
+                <p id="mi-id">Yo tengo un ID (<code>id="mi-id"</code>). CSS me selecciona con un numeral: <code>#mi-id { ... }</code></p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2: MODELO DE CAJA -->
+        <section class="seccion-guia">
+            <h2>2. El Modelo de Caja (Box Model)</h2>
+            <p>Todo en la web es un cuadrado/rectángulo. Todo elemento tiene:</p>
+            <ul>
+                <li><strong>Content (Contenido):</strong> El texto o imagen real.</li>
+                <li><strong>Padding (Relleno):</strong> Espacio transparente DENTRO del borde.</li>
+                <li><strong>Border (Borde):</strong> La línea que rodea al relleno.</li>
+                <li><strong>Margin (Margen):</strong> Espacio transparente FUERA del borde (separa de otros elementos).</li>
+            </ul>
+            
+            <div class="caja-demostracion">
+                Soy una caja de demostración. Mira mi código CSS para entender el Padding, Borde y Margen.
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: TEXTOS Y TIPOGRAFÍA -->
+        <section class="seccion-guia">
+            <h2>3. Tipografía (Letras y Textos)</h2>
+            <div class="textos-ejemplo">
+                <p class="texto-1">Puedo cambiar la fuente, el tamaño y el peso (negrita).</p>
+                <p class="texto-2">Puedo alinear el texto, subrayarlo o separarlo.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4: FONDOS Y COLORES -->
+        <section class="seccion-guia">
+            <h2>4. Fondos (Backgrounds) y Colores</h2>
+            <div class="fondos-ejemplo">
+                <div class="fondo-solido">Fondo de color sólido</div>
+                <div class="fondo-gradiente">Fondo con degradado</div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: DISPLAY Y ALINEACIÓN (FLEXBOX) -->
+        <section class="seccion-guia">
+            <h2>5. Cómo ordenar las cosas (Display: Flex)</h2>
+            <p>Por defecto, los bloques caen de arriba a abajo. Flexbox nos permite ponerlos de lado a lado.</p>
+            <div class="mi-contenedor-flex">
+                <div class="cajita">Caja 1</div>
+                <div class="cajita">Caja 2</div>
+                <div class="cajita">Caja 3</div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: TIPOS DE DISPLAY -->
+        <section class="seccion-guia">
+            <h2>6. Tipos de Display: block, inline e inline-block</h2>
+            <p>La propiedad <code>display</code> controla cómo se comporta un elemento en la página:</p>
+            <ul>
+                <li><strong>block:</strong> Ocupa TODA la línea. El siguiente elemento va debajo. Ej: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code></li>
+                <li><strong>inline:</strong> Solo ocupa lo que necesita. No puedes ponerle width/height. Ej: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code></li>
+                <li><strong>inline-block:</strong> Lo mejor de los dos: se pone al lado de otros, pero SÍ acepta width y height.</li>
+                <li><strong>none:</strong> El elemento desaparece completamente (no ocupa espacio).</li>
+            </ul>
+            <div class="demo-display">
+                <div class="demo-block">Soy BLOCK (ocupa toda la fila)</div>
+                <span class="demo-inline">Inline 1</span>
+                <span class="demo-inline">Inline 2</span>
+                <span class="demo-inline">Inline 3</span>
+                <div style="margin-top: 10px;">
+                    <span class="demo-inline-block">Inline-Block 1</span>
+                    <span class="demo-inline-block">Inline-Block 2</span>
+                    <span class="demo-inline-block">Inline-Block 3</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7: OVERFLOW -->
+        <section class="seccion-guia">
+            <h2>7. Overflow (Qué pasa cuando el contenido no cabe)</h2>
+            <p>Cuando el contenido es más grande que su caja, <code>overflow</code> decide qué hacer:</p>
+            <ul>
+                <li><strong>visible (default):</strong> El contenido se sale de la caja.</li>
+                <li><strong>hidden:</strong> Lo que sobra se corta y se oculta.</li>
+                <li><strong>scroll:</strong> Siempre aparece una barra de scroll.</li>
+                <li><strong>auto:</strong> Solo aparece barra de scroll si es necesario.</li>
+            </ul>
+            <div class="demo-overflow-wrap">
+                <div class="overflow-visible">
+                    <strong>visible:</strong> El texto se sale de la caja si es muy largo y no cabe dentro de los límites definidos.
+                </div>
+                <div class="overflow-hidden">
+                    <strong>hidden:</strong> El texto se corta si es muy largo y no cabe dentro de los límites definidos.
+                </div>
+                <div class="overflow-scroll">
+                    <strong>scroll:</strong> El texto se puede ver haciendo scroll si es muy largo y no cabe dentro de los límites definidos por el CSS.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8: Z-INDEX, FIXED Y STICKY -->
+        <section class="seccion-guia">
+            <h2>8. Posicionamiento Avanzado: fixed, sticky y z-index</h2>
+            <ul>
+                <li><strong>position: fixed</strong> — El elemento se queda fijo en la pantalla aunque hagas scroll. Ej: una barra de navegación.</li>
+                <li><strong>position: sticky</strong> — Se comporta normal hasta que llegas a él haciendo scroll; entonces se queda pegado.</li>
+                <li><strong>z-index</strong> — Controla qué elemento va "encima" de otro (como capas). Mayor número = más arriba.</li>
+            </ul>
+            <div class="demo-zindex-container">
+                <div class="capa capa-1">z-index: 1 (abajo)</div>
+                <div class="capa capa-2">z-index: 2 (medio)</div>
+                <div class="capa capa-3">z-index: 3 (arriba)</div>
+            </div>
+            <p class="nota-tip">💡 <strong>Nota:</strong> Para que z-index funcione, el elemento debe tener <code>position</code> distinto de <code>static</code> (relative, absolute, fixed o sticky).</p>
+        </section>
+
+        <!-- SECCIÓN 9: PSEUDO-ELEMENTOS -->
+        <section class="seccion-guia">
+            <h2>9. Pseudo-elementos: ::before y ::after</h2>
+            <p>Los pseudo-elementos permiten añadir contenido decorativo ANTES o DESPUÉS de un elemento sin tocar el HTML. Se usan con <code>::before</code> y <code>::after</code>.</p>
+            <p>Regla de oro: <strong>siempre necesitan la propiedad <code>content: ""</code></strong> para aparecer.</p>
+            <div class="demo-pseudoelementos">
+                <p class="con-before-after">Soy el texto real del HTML</p>
+                <p class="con-icono">Mi archivo está guardado</p>
+                <p class="con-linea">Un título con línea decorativa</p>
+            </div>
+            <p>Otros pseudo-elementos útiles: <code>::first-letter</code> (primera letra), <code>::placeholder</code> (texto de un input).</p>
+        </section>
+
+        <!-- SECCIÓN 10: HERENCIA Y !IMPORTANT -->
+        <section class="seccion-guia">
+            <h2>10. Herencia CSS y !important</h2>
+            <p><strong>Herencia:</strong> Algunas propiedades CSS se "heredan" automáticamente de padres a hijos (como <code>color</code>, <code>font-family</code>). Otras NO se heredan (como <code>border</code>, <code>margin</code>).</p>
+            <div class="demo-herencia">
+                <p>Este párrafo hereda el color azul y la fuente de su padre (.demo-herencia).</p>
+                <span>Este span también hereda.</span>
+            </div>
+            <p style="margin-top:15px;"><strong>!important:</strong> Fuerza que un estilo se aplique sin importar la especificidad. Úsalo con cuidado.</p>
+            <div class="demo-important">
+                <p class="importante-ejemplo">Mi color debería ser rojo por la clase, pero !important lo fuerza a verde.</p>
+            </div>
+            <p><strong>Especificidad (de mayor a menor):</strong> <code>!important</code> &gt; Estilos en línea &gt; ID (#) &gt; Clase (.) &gt; Etiqueta</p>
+        </section>
+
+        <!-- SECCIÓN 11: SELECTORES COMBINADOS -->
+        <section class="seccion-guia">
+            <h2>11. Selectores Combinados (Relacionales)</h2>
+            <p>Podemos combinar selectores para apuntar a elementos muy específicos:</p>
+            <ul>
+                <li><code>div p</code> — <strong>Descendiente:</strong> Todos los <code>&lt;p&gt;</code> que estén DENTRO de un <code>&lt;div&gt;</code> (a cualquier nivel).</li>
+                <li><code>div &gt; p</code> — <strong>Hijo directo:</strong> Solo los <code>&lt;p&gt;</code> que son hijos DIRECTOS del <code>&lt;div&gt;</code>.</li>
+                <li><code>h2 + p</code> — <strong>Hermano adyacente:</strong> El primer <code>&lt;p&gt;</code> que va justo DESPUÉS del <code>&lt;h2&gt;</code>.</li>
+                <li><code>h2 ~ p</code> — <strong>Hermanos generales:</strong> TODOS los <code>&lt;p&gt;</code> que van después del <code>&lt;h2&gt;</code> al mismo nivel.</li>
+            </ul>
+            <div class="demo-selectores">
+                <div class="caja-padre-sel">
+                    <p class="p-directo">Soy hijo directo del div (div &gt; p)</p>
+                    <div>
+                        <p class="p-nieto">Soy nieto del div (div p, descendiente)</p>
+                    </div>
+                </div>
+                <h3 class="h3-demo">Título h3</h3>
+                <p class="p-adyacente">Soy el hermano adyacente del h3 (h3 + p)</p>
+                <p class="p-general">Soy hermano general del h3 (h3 ~ p)</p>
+                <p class="p-general">También soy hermano general del h3 (h3 ~ p)</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 12: UNIDADES CSS Y SOMBRAS -->
+        <section class="seccion-guia">
+            <h2>12. Unidades CSS y Efectos de Sombra</h2>
+            <h3>Unidades de medida:</h3>
+            <ul>
+                <li><code>px</code> — Píxeles. Fijo. El más común.</li>
+                <li><code>%</code> — Relativo al elemento PADRE.</li>
+                <li><code>em</code> — Relativo al <strong>font-size del elemento padre</strong>. Si el padre tiene 16px, 2em = 32px.</li>
+                <li><code>rem</code> — Relativo al <strong>font-size del elemento raíz (&lt;html&gt;)</strong>. Más predecible que em.</li>
+                <li><code>vh</code> — 1% del alto de la pantalla (Viewport Height). 100vh = pantalla completa en alto.</li>
+                <li><code>vw</code> — 1% del ancho de la pantalla (Viewport Width). 100vw = pantalla completa en ancho.</li>
+            </ul>
+            <div class="demo-unidades">
+                <div class="caja-px">200px fijo</div>
+                <div class="caja-em">2em (relativo al padre)</div>
+                <div class="caja-rem">1.5rem (relativo al root)</div>
+                <div class="caja-vw">50vw (mitad de la pantalla)</div>
+            </div>
+            <h3 style="margin-top: 20px;">Sombras:</h3>
+            <div class="demo-sombras">
+                <div class="caja-box-shadow">box-shadow</div>
+                <div class="caja-text-shadow">text-shadow</div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
+

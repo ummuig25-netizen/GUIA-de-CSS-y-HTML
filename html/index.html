@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Guía de CSS y HTML — Inicio</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <header class="cabecera">
+        <h1>📚 Mi Guía de Estudio: CSS y HTML</h1>
+        <p>Selecciona un tema para estudiarlo. Todos los archivos están comentados y explicados.</p>
+    </header>
+
+    <main class="contenedor-principal">
+
+        <!-- BLOQUE HTML -->
+        <section class="bloque-tema">
+            <h2 class="titulo-bloque">🌐 HTML</h2>
+
+            <a href="html-semantico.html" class="tarjeta tarjeta-html">
+                <span class="tarjeta-icono">📄</span>
+                <div class="tarjeta-info">
+                    <h3>HTML Semántico y Estructuras</h3>
+                    <p>Etiquetas semánticas, estructura de página, textos, listas, tablas, formularios y etiquetas inline vs block.</p>
+                    <span class="etiqueta nivel-nuevo">✨ Nuevo</span>
+                </div>
+            </a>
+        </section>
+
+        <!-- BLOQUE CSS -->
+        <section class="bloque-tema">
+            <h2 class="titulo-bloque">🎨 CSS — De Básico a Avanzado</h2>
+
+            <a href="basico.html" class="tarjeta tarjeta-basico">
+                <span class="tarjeta-icono">🟢</span>
+                <div class="tarjeta-info">
+                    <h3>Nivel Básico</h3>
+                    <p>Selectores (etiqueta, clase, ID), colores, tipografía y el Modelo de Caja (margin, padding, border).</p>
+                    <span class="etiqueta nivel-basico">Básico</span>
+                </div>
+            </a>
+
+            <a href="intermedio.html" class="tarjeta tarjeta-intermedio">
+                <span class="tarjeta-icono">🟡</span>
+                <div class="tarjeta-info">
+                    <h3>Nivel Intermedio</h3>
+                    <p>Flexbox, efecto Hover con transiciones, y posicionamiento relativo y absoluto.</p>
+                    <span class="etiqueta nivel-intermedio">Intermedio</span>
+                </div>
+            </a>
+
+            <a href="avanzado.html" class="tarjeta tarjeta-avanzado">
+                <span class="tarjeta-icono">🔴</span>
+                <div class="tarjeta-info">
+                    <h3>Nivel Avanzado</h3>
+                    <p>CSS Grid, animaciones con @keyframes, Responsive Design con @media queries y Variables CSS.</p>
+                    <span class="etiqueta nivel-avanzado">Avanzado</span>
+                </div>
+            </a>
+
+            <a href="guia-definitiva.html" class="tarjeta tarjeta-definitiva">
+                <span class="tarjeta-icono">📘</span>
+                <div class="tarjeta-info">
+                    <h3>La Guía Definitiva (Todo en uno)</h3>
+                    <p>Selectores, Box Model, Tipografía, Fondos, Flexbox, Display, Overflow, Z-index, Pseudo-elementos, Herencia, Selectores combinados y Unidades CSS.</p>
+                    <span class="etiqueta nivel-completo">Completo</span>
+                    <span class="etiqueta nivel-nuevo">✨ Actualizado</span>
+                </div>
+            </a>
+        </section>
+
+        <!-- RESUMEN RÁPIDO PARA EXAMEN -->
+        <section class="bloque-tema bloque-resumen">
+            <h2 class="titulo-bloque">⚡ Resumen Rápido — Conceptos Clave</h2>
+            <div class="grid-resumen">
+                <div class="chip-concepto">Selectores: etiqueta / .clase / #id</div>
+                <div class="chip-concepto">Box Model: margin > border > padding > content</div>
+                <div class="chip-concepto">display: block / inline / inline-block / none</div>
+                <div class="chip-concepto">Flexbox: display:flex + justify-content + align-items</div>
+                <div class="chip-concepto">Grid: display:grid + grid-template-columns + gap</div>
+                <div class="chip-concepto">position: static / relative / absolute / fixed / sticky</div>
+                <div class="chip-concepto">z-index necesita position ≠ static</div>
+                <div class="chip-concepto">overflow: visible / hidden / scroll / auto</div>
+                <div class="chip-concepto">::before y ::after necesitan content: ""</div>
+                <div class="chip-concepto">Especificidad: !important > inline > #id > .clase > etiqueta</div>
+                <div class="chip-concepto">Selectores: div p / div>p / h2+p / h2~p</div>
+                <div class="chip-concepto">Unidades: px / % / em / rem / vh / vw</div>
+                <div class="chip-concepto">@keyframes + animation: nombre duración ease infinite</div>
+                <div class="chip-concepto">@media (max-width: 600px) { ... }</div>
+                <div class="chip-concepto">transition: all 0.3s ease</div>
+                <div class="chip-concepto">box-shadow: X Y blur color</div>
+                <div class="chip-concepto">Herencia: color y font SÍ / border y margin NO</div>
+                <div class="chip-concepto">box-sizing: border-box → padding no agranda la caja</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pie">
+        <p>📝 Buena suerte en tu examen 🚀</p>
+    </footer>
+
+</body>
+</html>
