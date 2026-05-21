@@ -3,12 +3,15 @@
    ========================================================================= */
 
 /* RESET Y BASE */
+
+/* Selector Universal (*): Selecciona TODOS los elementos de la página sin excepción */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Selector de Etiqueta: Afecta a todos los elementos <body> */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f4f8;
@@ -16,6 +19,7 @@ body {
     line-height: 1.7;
 }
 
+/* Selector de Etiqueta: Afecta a todos los elementos <code> (código inline) */
 code {
     background-color: #edf2f7;
     color: #c0392b;
@@ -25,6 +29,7 @@ code {
     font-family: 'Courier New', monospace;
 }
 
+/* Selector de Etiqueta: Afecta a todos los elementos <pre> (bloques de código preformateado) */
 pre {
     background-color: #1e1e2e;
     color: #cdd6f4;
@@ -35,6 +40,7 @@ pre {
     line-height: 1.8;
 }
 
+/* Selector Descendiente (espacio): Selecciona el elemento <code> que esté dentro de un <pre> */
 pre code {
     background: none;
     color: inherit;
@@ -42,15 +48,26 @@ pre code {
     font-size: inherit;
 }
 
+/* Selectores Agrupados por coma (,): Aplica el line-height a los h1, h2 y h3 simultáneamente */
 h1, h2, h3 { line-height: 1.3; }
+
+/* Selector de Etiqueta: Afecta a los h3 */
 h3 { margin: 15px 0 8px; color: #4a5568; }
+
+/* Selectores Agrupados por coma (,): Aplica a las listas desordenadas (ul) y ordenadas (ol) */
 ul, ol { padding-left: 25px; }
+
+/* Selector de Etiqueta: Afecta a los elementos de lista (li) */
 li { margin-bottom: 5px; }
+
+/* Selector de Etiqueta: Afecta a los párrafos (p) */
 p { margin-bottom: 10px; }
 
 /* ==========================================
    CABECERA PRINCIPAL
    ========================================== */
+
+/* Selector de Clase (.): Afecta a la cabecera principal con class="cabecera-principal" */
 .cabecera-principal {
     background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
     color: white;
@@ -58,18 +75,20 @@ p { margin-bottom: 10px; }
     text-align: center;
 }
 
+/* Selector Descendiente: Selecciona el h1 dentro de .cabecera-principal */
 .cabecera-principal h1 {
     font-size: 2.2em;
     margin-bottom: 10px;
 }
 
+/* Selector Descendiente: Selecciona el p dentro de .cabecera-principal */
 .cabecera-principal p {
     font-size: 1.1em;
     opacity: 0.85;
     margin-bottom: 20px;
 }
 
-/* Barra de navegación dentro del header */
+/* Selector de Clase (.): Afecta al menú con class="nav-principal" */
 .nav-principal {
     display: flex;
     justify-content: center;
@@ -78,6 +97,7 @@ p { margin-bottom: 10px; }
     margin-top: 15px;
 }
 
+/* Selector Descendiente: Selecciona los enlaces (a) que están dentro de .nav-principal */
 .nav-principal a {
     color: white;
     text-decoration: none;
@@ -88,6 +108,7 @@ p { margin-bottom: 10px; }
     transition: background-color 0.2s ease;
 }
 
+/* Selector Descendiente con Pseudo-clase (:hover): Selecciona los enlaces dentro de .nav-principal al pasar el ratón */
 .nav-principal a:hover {
     background-color: rgba(255,255,255,0.35);
 }
@@ -95,12 +116,15 @@ p { margin-bottom: 10px; }
 /* ==========================================
    SECCIONES
    ========================================== */
+
+/* Selector de Etiqueta: Afecta a la etiqueta contenedora <main> */
 main {
     max-width: 960px;
     margin: 0 auto;
     padding: 30px 20px;
 }
 
+/* Selector de Clase (.): Afecta a los bloques con class="seccion" */
 .seccion {
     background-color: white;
     border-radius: 12px;
@@ -110,6 +134,7 @@ main {
     border-left: 5px solid #3498db;
 }
 
+/* Selector Descendiente: Selecciona el título h2 dentro de .seccion */
 .seccion h2 {
     color: #1a1a2e;
     font-size: 1.5em;
@@ -121,6 +146,8 @@ main {
 /* ==========================================
    SECCIÓN 1: TABLA SEMÁNTICA
    ========================================== */
+
+/* Selector de Clase (.): Afecta a la tabla con class="tabla-semantica" */
 .tabla-semantica {
     border-radius: 8px;
     overflow: hidden;
@@ -128,6 +155,7 @@ main {
     margin: 15px 0;
 }
 
+/* Selector de Clase (.): Afecta a las filas con class="fila-semantica" */
 .fila-semantica {
     display: grid;
     grid-template-columns: 1fr 2fr 2fr;
@@ -135,10 +163,12 @@ main {
     border-bottom: 1px solid #e2e8f0;
 }
 
+/* Selector con Pseudo-clase (:last-child): Afecta a la última fila para quitarle el borde inferior */
 .fila-semantica:last-child {
     border-bottom: none;
 }
 
+/* Selectores Agrupados de Descendientes: Selecciona los span y code que están dentro de .fila-semantica */
 .fila-semantica span,
 .fila-semantica code {
     padding: 10px 14px;
@@ -148,28 +178,34 @@ main {
     font-size: 0.9em;
 }
 
+/* Selectores Agrupados de Descendientes con Pseudo-clase (:last-child): Afecta al último hijo de cada fila */
 .fila-semantica span:last-child,
 .fila-semantica code:last-child {
     border-right: none;
 }
 
+/* Selector de Clase (.): Afecta a la cabecera de la tabla */
 .cabecera-tabla {
     background-color: #2d3748;
     color: white;
     font-weight: bold;
 }
 
+/* Selector Descendiente: Selecciona los span dentro de .cabecera-tabla */
 .cabecera-tabla span {
     color: white;
     background: none;
 }
 
+/* Selector Complejo (Pseudo-clase funcional): Selecciona filas impares (:nth-child(even)) excluyendo la cabecera (:not(.cabecera-tabla)) */
 .fila-semantica:nth-child(even):not(.cabecera-tabla) {
     background-color: #f7fafc;
 }
 
 /* Diagrama visual de estructura */
-.diagrama-estructura {
+
+/* Selector de Clase (.): Contenedor del diagrama visual */
+.diagrama-structure {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
@@ -178,21 +214,25 @@ main {
     text-align: center;
 }
 
+/* Selectores Agrupados: Estilos de bloque para header, nav y footer en el diagrama */
 .diag-header, .diag-nav, .diag-footer {
     padding: 12px;
     border-radius: 6px;
     color: white;
 }
 
+/* Selectores de Clase (.) individuales para el color de cada parte del diagrama */
 .diag-header { background-color: #2980b9; }
 .diag-nav    { background-color: #8e44ad; }
 .diag-footer { background-color: #7f8c8d; }
 
+/* Selector de Clase (.): Fila del cuerpo del diagrama (main + aside) */
 .diag-cuerpo {
     display: flex;
     gap: 6px;
 }
 
+/* Selector de Clase (.): Parte del contenido principal en el diagrama */
 .diag-main {
     flex: 3;
     background-color: #27ae60;
@@ -203,6 +243,7 @@ main {
     text-align: center;
 }
 
+/* Selector de Clase (.): Parte del aside en el diagrama */
 .diag-aside {
     flex: 1;
     background-color: #e67e22;
@@ -216,6 +257,8 @@ main {
 /* ==========================================
    SECCIÓN 2: HEADINGS Y TEXTOS
    ========================================== */
+
+/* Selector de Clase (.): Contenedor de las cabeceras */
 .demo-headings {
     background-color: #f7fafc;
     padding: 15px;
@@ -223,7 +266,7 @@ main {
     border: 1px dashed #cbd5e0;
 }
 
-/* Resetear los h1-h6 dentro del demo para que no afecten al diseño global */
+/* Selector de Clase (.): Resetea y define estilos estéticos a los headings del demo */
 .demo-h {
     color: #2d3748 !important;
     border: none !important;
@@ -231,6 +274,7 @@ main {
     margin: 2px 0 !important;
 }
 
+/* Selector de Clase (.): Contenedor de textos del demo */
 .demo-textos {
     background-color: #f7fafc;
     padding: 15px;
@@ -239,23 +283,27 @@ main {
     margin-top: 10px;
 }
 
+/* Selector Descendiente: Selecciona los párrafos dentro de .demo-textos */
 .demo-textos p {
     margin-bottom: 8px;
     padding-bottom: 8px;
     border-bottom: 1px solid #e2e8f0;
 }
 
+/* Selector Descendiente con Pseudo-clase (:last-child): Quita la línea divisoria al último párrafo */
 .demo-textos p:last-child {
     border-bottom: none;
     margin-bottom: 0;
 }
 
+/* Selector de Etiqueta: Afecta a los textos marcados (<mark>) */
 mark {
     background-color: #ffd32a;
     padding: 0 3px;
     border-radius: 2px;
 }
 
+/* Selector de Etiqueta: Afecta a las líneas divisorias horizontales (<hr>) */
 hr {
     border: none;
     border-top: 2px solid #cbd5e0;
@@ -265,6 +313,8 @@ hr {
 /* ==========================================
    SECCIÓN 3: LISTAS
    ========================================== */
+
+/* Selector de Clase (.): Contenedor flex del demo de listas */
 .demo-listas {
     display: flex;
     gap: 20px;
@@ -272,6 +322,7 @@ hr {
     margin-top: 10px;
 }
 
+/* Selector de Clase (.): Tarjeta para cada tipo de lista */
 .tipo-lista {
     flex: 1;
     min-width: 200px;
@@ -281,18 +332,21 @@ hr {
     border: 1px dashed #cbd5e0;
 }
 
+/* Selector Descendiente: Títulos de cada lista */
 .tipo-lista h3 {
     color: #2980b9;
     margin-bottom: 10px;
     font-size: 0.9em;
 }
 
+/* Selector Descendiente: Términos de la lista de definición (dt) */
 dl dt {
     font-weight: bold;
     color: #2980b9;
     margin-top: 6px;
 }
 
+/* Selector Descendiente: Definiciones de la lista (dd) */
 dl dd {
     margin-left: 15px;
     font-size: 0.9em;
@@ -302,6 +356,8 @@ dl dd {
 /* ==========================================
    SECCIÓN 4: ENLACES E IMÁGENES
    ========================================== */
+
+/* Selector de Clase (.): Contenedor de enlaces del demo */
 .demo-enlaces {
     background-color: #f7fafc;
     padding: 15px;
@@ -310,17 +366,20 @@ dl dd {
     margin: 10px 0;
 }
 
+/* Selector Descendiente: Enlaces dentro de .demo-enlaces */
 .demo-enlaces a {
     color: #2980b9;
     font-weight: bold;
 }
 
+/* Selector Descendiente: Párrafos dentro de .demo-enlaces */
 .demo-enlaces p {
     padding-bottom: 8px;
     border-bottom: 1px solid #e2e8f0;
     margin-bottom: 8px;
 }
 
+/* Selector de Clase (.): Bloque de código de la imagen */
 .demo-img-codigo {
     background-color: #1e1e2e;
     color: #cdd6f4;
@@ -331,6 +390,7 @@ dl dd {
     font-size: 14px;
 }
 
+/* Selector Descendiente: Elemento code dentro de .demo-img-codigo */
 .demo-img-codigo code {
     background: none;
     color: #cdd6f4;
@@ -340,10 +400,13 @@ dl dd {
 /* ==========================================
    SECCIÓN 5: TABLAS
    ========================================== */
+
+/* Selector de Clase (.): Bloque del código de la tabla */
 .demo-codigo-tabla {
     margin: 10px 0;
 }
 
+/* Selector de Clase (.): Tabla de ejemplo estilizada */
 .tabla-ejemplo {
     width: 100%;
     border-collapse: collapse; /* Junta los bordes de las celdas */
@@ -353,7 +416,7 @@ dl dd {
     box-shadow: 0 1px 5px rgba(0,0,0,0.1);
 }
 
-/* Celdas de cabecera */
+/* Selector Descendiente: Celdas de cabecera (th) dentro de .tabla-ejemplo */
 .tabla-ejemplo th {
     background-color: #2d3748;
     color: white;
@@ -361,22 +424,23 @@ dl dd {
     text-align: left;
 }
 
-/* Celdas normales */
+/* Selector Descendiente: Celdas normales (td) dentro de .tabla-ejemplo */
 .tabla-ejemplo td {
     padding: 10px 15px;
     border-bottom: 1px solid #e2e8f0;
 }
 
-/* Filas alternas de color */
+/* Selector Descendiente con Pseudo-clase (:nth-child): Filas alternas (pares) en el cuerpo */
 .tabla-ejemplo tbody tr:nth-child(even) {
     background-color: #f7fafc;
 }
 
+/* Selector Descendiente con Pseudo-clase (:hover): Ilumina la fila al pasar el cursor */
 .tabla-ejemplo tbody tr:hover {
     background-color: #ebf4fd;
 }
 
-/* Pie de tabla */
+/* Selector Descendiente: Celdas del pie de tabla (tfoot td) */
 .tabla-ejemplo tfoot td {
     background-color: #edf2f7;
     font-weight: bold;
@@ -386,6 +450,8 @@ dl dd {
 /* ==========================================
    SECCIÓN 6: FORMULARIOS
    ========================================== */
+
+/* Selector de Clase (.): Formulario de ejemplo contenedor */
 .formulario-ejemplo {
     background-color: #f7fafc;
     padding: 20px;
@@ -393,10 +459,12 @@ dl dd {
     border: 1px solid #e2e8f0;
 }
 
+/* Selector de Clase (.): Caja del campo del formulario */
 .campo-form {
     margin-bottom: 15px;
 }
 
+/* Selector Descendiente: Etiquetas label dentro de .campo-form */
 .campo-form label {
     display: block;
     font-weight: bold;
@@ -405,7 +473,7 @@ dl dd {
     font-size: 0.9em;
 }
 
-/* Estilos para inputs de texto, email, password, number */
+/* Selectores de Atributo Agrupados: Aplica estilos comunes a inputs de texto, email, password, number, select y textarea */
 .campo-form input[type="text"],
 .campo-form input[type="email"],
 .campo-form input[type="password"],
@@ -423,7 +491,7 @@ dl dd {
     background-color: white;
 }
 
-/* Efecto al hacer clic (focus) */
+/* Selectores de Atributo y Pseudo-clases Agrupados (:focus): Cambia el borde al hacer clic en los campos */
 .campo-form input:focus,
 .campo-form select:focus,
 .campo-form textarea:focus {
@@ -432,6 +500,7 @@ dl dd {
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
 }
 
+/* Selector de Clase (.): Contenedor de los radio buttons */
 .radio-group {
     display: flex;
     gap: 15px;
@@ -439,6 +508,7 @@ dl dd {
     margin-top: 5px;
 }
 
+/* Selector Descendiente: Las etiquetas label dentro del grupo de radios */
 .radio-group label {
     font-weight: normal;
     display: flex;
@@ -447,6 +517,7 @@ dl dd {
     cursor: pointer;
 }
 
+/* Selector de Clase (.): Fila de botones del formulario */
 .botones-form {
     display: flex;
     gap: 10px;
@@ -454,7 +525,7 @@ dl dd {
     margin-top: 5px;
 }
 
-/* Botón de enviar */
+/* Selector de Clase (.): Botón de enviar */
 .btn-submit {
     background-color: #27ae60;
     color: white;
@@ -466,9 +537,10 @@ dl dd {
     transition: background-color 0.2s ease;
 }
 
+/* Selector con Pseudo-clase (:hover): Cambia el fondo del botón de enviar */
 .btn-submit:hover { background-color: #219150; }
 
-/* Botón de limpiar */
+/* Selector de Clase (.): Botón de limpiar */
 .btn-reset {
     background-color: #e74c3c;
     color: white;
@@ -480,11 +552,14 @@ dl dd {
     transition: background-color 0.2s ease;
 }
 
+/* Selector con Pseudo-clase (:hover): Cambia el fondo del botón de limpiar */
 .btn-reset:hover { background-color: #c0392b; }
 
 /* ==========================================
    SECCIÓN 7: ETIQUETAS INLINE vs BLOCK
    ========================================== */
+
+/* Selector de Clase (.): Contenedor de la lista de etiquetas */
 .lista-etiquetas {
     display: flex;
     flex-wrap: wrap;
@@ -496,6 +571,7 @@ dl dd {
     border: 2px solid #fed7d7;
 }
 
+/* Selector Descendiente: Etiquetas code dentro de .lista-etiquetas */
 .lista-etiquetas code {
     background-color: #c0392b;
     color: white;
@@ -503,11 +579,13 @@ dl dd {
     border-radius: 4px;
 }
 
+/* Selector Multiclase / Encadenado (sin espacio): Selecciona elementos que tienen simultáneamente las clases .lista-etiquetas e .inline */
 .lista-etiquetas.inline {
     background-color: #f0fff4;
     border-color: #c6f6d5;
 }
 
+/* Selector Multiclase + Descendiente: Selecciona code dentro de un elemento que tenga ambas clases (.lista-etiquetas e .inline) */
 .lista-etiquetas.inline code {
     background-color: #27ae60;
     color: white;
@@ -516,6 +594,8 @@ dl dd {
 /* ==========================================
    PIE DE PÁGINA
    ========================================== */
+
+/* Selector de Clase (.): Pie de página inferior */
 .pie-pagina {
     background-color: #2d3748;
     color: #a0aec0;

@@ -2,18 +2,21 @@
    NIVEL AVANZADO - avanzado.css
    ========================================== */
 
-/* Variables CSS (Una forma avanzada de guardar colores para reutilizarlos) */
+/* Selector de Pseudo-clase Especial (:root): Representa la raíz del documento (el elemento HTML). 
+   Se usa para declarar variables CSS globales. */
 :root {
     --color-principal: #34495e;
     --color-secundario: #1abc9c;
 }
 
+/* Selector de Etiqueta: Afecta a todos los elementos <body> */
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
 }
 
-/* 1. CSS GRID (Ideal para estructuras de páginas complejas) */
+/* 1. CSS GRID */
+/* Selector de Clase (.): Afecta a elementos con class="contenedor-grid" */
 .contenedor-grid {
     display: grid;
     /* Creamos 3 columnas del mismo tamaño (1fr = 1 fracción del espacio) */
@@ -22,6 +25,7 @@ body {
     margin-bottom: 50px;
 }
 
+/* Selector de Clase (.): Afecta a elementos con class="item-grid" */
 .item-grid {
     background-color: var(--color-principal); /* Usamos la variable */
     color: white;
@@ -31,19 +35,21 @@ body {
     font-size: 24px;
 }
 
-/* Este item ocupará 2 columnas de ancho */
+/* Selector de Clase (.): Afecta a elementos con class="col-ancha" */
 .col-ancha {
-    grid-column: span 2; 
+    grid-column: span 2; /* Ocupará 2 columnas de ancho */
     background-color: var(--color-secundario);
 }
 
-/* 2. ANIMACIONES (@keyframes) */
+/* Regla especial @keyframes: Define los pasos de una animación (no es un selector) */
 @keyframes rotar-y-cambiar {
     0% { transform: rotate(0deg); background-color: #f1c40f; }
     50% { transform: rotate(180deg); background-color: #e67e22; border-radius: 50%; } /* A la mitad se hace un círculo */
     100% { transform: rotate(360deg); background-color: #f1c40f; }
 }
 
+/* 2. ANIMACIONES */
+/* Selector de Clase (.): Afecta a elementos con class="caja-animada" */
 .caja-animada {
     width: 200px;
     height: 200px;
@@ -57,7 +63,8 @@ body {
     animation: rotar-y-cambiar 4s ease-in-out infinite; 
 }
 
-/* 3. RESPONSIVE DESIGN (@media queries) */
+/* 3. RESPONSIVE DESIGN */
+/* Selector de Clase (.): Afecta a elementos con class="caja-responsive" */
 .caja-responsive {
     background-color: #2c3e50;
     color: white;
@@ -66,20 +73,26 @@ body {
     border-radius: 10px;
 }
 
-/* MODO MÓVIL: Si la pantalla tiene un ancho máximo de 600px, aplica estos estilos */
+/* Regla @media (Media Query): Aplica los estilos que están dentro SOLO si se cumple la condición (pantalla de ancho máximo 600px) */
 @media (max-width: 600px) {
+    
+    /* Selector de Clase (.) dentro de la Media Query */
     .caja-responsive {
         background-color: #e74c3c; /* Cambia a rojo en móviles */
     }
+    
+    /* Selector con Pseudo-elemento (::after) descendiente de un párrafo dentro de .caja-responsive */
     .caja-responsive p::after {
         content: " ¡ESTÁS EN MODO MÓVIL!";
         font-weight: bold;
     }
 
-    /* También hacemos que el Grid pase de 3 columnas a 1 sola columna en móviles */
+    /* Selector de Clase (.) dentro de la Media Query */
     .contenedor-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Pasa de 3 columnas a 1 sola columna en móviles */
     }
+    
+    /* Selector de Clase (.) dentro de la Media Query */
     .col-ancha {
         grid-column: span 1; /* Le quitamos lo ancho */
     }
