@@ -40,7 +40,7 @@ h2 {
 
 /* ==========================================
    2. EL MODELO DE CAJA (Box Model)
-   ========================================== */
+   =================================/* Selector de Clase (.): Afecta a elementos con class="caja-demostracion" */
 .caja-demostracion {
     /* CONTENIDO */
     width: 300px;            /* Ancho (Width) */
@@ -70,12 +70,15 @@ h2 {
 /* ==========================================
    3. TIPOGRAFÍA (Textos)
    ========================================== */
+
+/* Selector de Clase (.): Afecta a elementos con class="texto-1" */
 .texto-1 {
     font-size: 24px;         /* Tamaño de la letra */
     font-style: italic;      /* Letra cursiva (inclinada) */
     letter-spacing: 2px;     /* Espacio entre cada letra */
 }
 
+/* Selector de Clase (.): Afecta a elementos con class="texto-2" */
 .texto-2 {
     text-align: center;      /* Centra el texto (puede ser left, right, center, justify) */
     text-transform: uppercase; /* CONVIERTE TODO A MAYÚSCULAS */
@@ -85,6 +88,8 @@ h2 {
 /* ==========================================
    4. FONDOS (Backgrounds)
    ========================================== */
+
+/* Selector Descendiente (espacio): Selecciona cualquier elemento <div> que esté DENTRO de un elemento con la clase .fondos-ejemplo */
 .fondos-ejemplo div {
     height: 100px;
     margin-bottom: 10px;
@@ -93,10 +98,12 @@ h2 {
     line-height: 100px;      /* Truco: igualar line-height al height centra el texto verticalmente */
 }
 
+/* Selector de Clase (.): Afecta a elementos con class="fondo-solido" */
 .fondo-solido {
     background-color: #34495e; /* Un solo color aburrido */
 }
 
+/* Selector de Clase (.): Afecta a elementos con class="fondo-gradiente" */
 .fondo-gradiente {
     /* Degradado lineal: de izquierda a derecha, de azul a morado */
     background: linear-gradient(to right, #3498db, #9b59b6);
@@ -105,6 +112,8 @@ h2 {
 /* ==========================================
    5. FLEXBOX (Para maquetar la web)
    ========================================== */
+
+/* Selector de Clase (.): Afecta a elementos con class="mi-contenedor-flex" */
 .mi-contenedor-flex {
     /* ¡Magia! Convierte la caja en un contenedor Flex */
     display: flex;           
@@ -124,6 +133,7 @@ h2 {
     padding: 20px;
 }
 
+/* Selector de Clase (.): Afecta a elementos con class="cajita" */
 .cajita {
     background-color: #16a085;
     color: white;
@@ -135,12 +145,15 @@ h2 {
 /* ==========================================
    6. EXTRAS: HOVER Y TRANSICIONES
    ========================================== */
+
+/* Selector con Pseudo-clase (:hover): Aplica estilos a la clase .cajita SOLO cuando pasas el ratón por encima */
 .cajita:hover {
     background-color: #1abc9c;   /* Cambia color al pasar ratón */
     transform: translateY(-10px);/* Se eleva 10 píxeles */
     cursor: pointer;             /* Manita del ratón */
 }
 
+/* Selector de Clase (.): Definición de transición para que los cambios en .cajita sean suaves */
 .cajita {
     /* Hace que todos los cambios que sufra (como el hover) tarden 0.3 segundos en vez de ser instantáneos */
     transition: all 0.3s ease; 
@@ -149,6 +162,8 @@ h2 {
 /* ==========================================
    6. TIPOS DE DISPLAY
    ========================================== */
+
+/* Selector de Clase (.): Aplica al contenedor del demo de display */
 .demo-display {
     background-color: #f8f9fa;
     padding: 15px;
@@ -156,7 +171,7 @@ h2 {
     border: 1px dashed #ccc;
 }
 
-/* display: block — Ocupa toda la fila */
+/* Selector de Clase (.): Hace que el elemento se comporte como bloque (ocupa toda la fila) */
 .demo-block {
     display: block;
     background-color: #2980b9;
@@ -166,7 +181,7 @@ h2 {
     border-radius: 4px;
 }
 
-/* display: inline — Solo ocupa lo que necesita. No acepta width/height */
+/* Selector de Clase (.): Hace que el elemento se comporte como línea (no acepta width/height) */
 .demo-inline {
     display: inline;
     background-color: #e74c3c;
@@ -176,7 +191,7 @@ h2 {
     margin: 2px;
 }
 
-/* display: inline-block — Al lado de otros, pero acepta width y height */
+/* Selector de Clase (.): Hace que el elemento sea inline-block (línea, pero acepta width/height) */
 .demo-inline-block {
     display: inline-block;
     background-color: #27ae60;
@@ -191,13 +206,15 @@ h2 {
 /* ==========================================
    7. OVERFLOW
    ========================================== */
+
+/* Selector de Clase (.): Contenedor flex para las cajas de overflow */
 .demo-overflow-wrap {
     display: flex;
     gap: 15px;
     margin-top: 10px;
 }
 
-/* Estilos base para las 3 cajas de overflow */
+/* Selectores Agrupados por coma (,): Aplica estas propiedades base a las tres clases simultáneamente para no repetir código */
 .overflow-visible,
 .overflow-hidden,
 .overflow-scroll {
@@ -210,13 +227,20 @@ h2 {
     font-size: 13px;
 }
 
-.overflow-visible { overflow: visible; }   /* El texto se desborda */
-.overflow-hidden  { overflow: hidden; }    /* El texto se corta */
-.overflow-scroll  { overflow: scroll; }    /* Aparece barra de scroll */
+/* Selector de Clase (.): Muestra todo el contenido desbordado fuera de la caja */
+.overflow-visible { overflow: visible; }
+
+/* Selector de Clase (.): Recorta y oculta el contenido que no quepa en la caja */
+.overflow-hidden  { overflow: hidden; }
+
+/* Selector de Clase (.): Fuerza la aparición de barras de desplazamiento */
+.overflow-scroll  { overflow: scroll; }
 
 /* ==========================================
    8. Z-INDEX, FIXED Y STICKY
    ========================================== */
+
+/* Selector de Clase (.): Estilo de nota destacada amarilla */
 .nota-tip {
     background-color: #fff3cd;
     border-left: 4px solid #f39c12;
@@ -225,12 +249,14 @@ h2 {
     margin-top: 15px;
 }
 
+/* Selector de Clase (.): Crea un marco de referencia de posicionamiento relativo */
 .demo-zindex-container {
     position: relative;   /* Contexto de apilamiento */
     height: 120px;
     margin: 15px 0;
 }
 
+/* Selector de Clase (.): Estilos comunes para las cajas posicionadas de forma absoluta */
 .capa {
     position: absolute;   /* Necesario para que z-index funcione */
     width: 200px;
@@ -244,6 +270,7 @@ h2 {
     font-size: 14px;
 }
 
+/* Selector de Clase (.): Capa inferior (z-index: 1) */
 .capa-1 {
     background-color: #c0392b;  /* Rojo — la más abajo */
     top: 30px;
@@ -251,6 +278,7 @@ h2 {
     z-index: 1;
 }
 
+/* Selector de Clase (.): Capa intermedia (z-index: 2) */
 .capa-2 {
     background-color: #8e44ad;  /* Morado — en el medio */
     top: 15px;
@@ -258,6 +286,7 @@ h2 {
     z-index: 2;
 }
 
+/* Selector de Clase (.): Capa superior (z-index: 3) */
 .capa-3 {
     background-color: #2980b9;  /* Azul — la más arriba */
     top: 0px;
@@ -268,6 +297,8 @@ h2 {
 /* ==========================================
    9. PSEUDO-ELEMENTOS ::before y ::after
    ========================================== */
+
+/* Selector de Clase (.): Contenedor del demo de pseudo-elementos */
 .demo-pseudoelementos {
     background-color: #f8f9fa;
     padding: 15px;
@@ -275,28 +306,32 @@ h2 {
     margin: 10px 0;
 }
 
-/* Ejemplo 1: Añadir texto antes y después */
+/* Selector con Pseudo-elemento (::before): Inserta texto o emojis ANTES del contenido del elemento */
 .con-before-after::before {
     content: "👉 ";          /* El contenido que aparece ANTES */
     font-size: 1.2em;
 }
+
+/* Selector con Pseudo-elemento (::after): Inserta texto o emojis DESPUÉS del contenido del elemento */
 .con-before-after::after {
     content: " 👈";          /* El contenido que aparece DESPUÉS */
     font-size: 1.2em;
 }
 
-/* Ejemplo 2: Añadir un icono antes */
+/* Selector con Pseudo-elemento (::before): Inserta un check de éxito antes del texto */
 .con-icono::before {
     content: "✅ ";           /* Un check antes del texto */
     color: #27ae60;
 }
 
-/* Ejemplo 3: Línea decorativa después del texto */
+/* Selector de Clase (.): Elemento al que se le añadirá una línea decorativa */
 .con-linea {
     font-weight: bold;
     font-size: 18px;
     display: inline-block;    /* Necesario para que el ::after funcione bien */
 }
+
+/* Selector con Pseudo-elemento (::after): Crea una línea decorativa debajo del texto sin tocar el HTML */
 .con-linea::after {
     content: "";              /* Sin texto, pero necesario */
     display: block;           /* Que ocupe su propia línea */
@@ -309,6 +344,8 @@ h2 {
 /* ==========================================
    10. HERENCIA Y !IMPORTANT
    ========================================== */
+
+/* Selector de Clase (.): Contenedor padre para ilustrar qué propiedades heredan los hijos */
 .demo-herencia {
     /* Estas propiedades SÍ se heredan a los hijos */
     color: #2980b9;
@@ -322,6 +359,7 @@ h2 {
     background-color: #eaf4fc;
 }
 
+/* Selector de Clase (.): Contenedor del ejemplo de !important */
 .demo-important {
     padding: 10px;
     background-color: #ffeaa7;
@@ -329,12 +367,12 @@ h2 {
     margin-top: 10px;
 }
 
-/* Esta clase dice rojo... */
+/* Selector de Clase (.): Aplica color rojo a los elementos con esta clase */
 .importante-ejemplo {
     color: red;
 }
 
-/* ...pero !important fuerza el verde y gana siempre */
+/* Selector Descendiente con !important: Selecciona .importante-ejemplo dentro de .demo-important e ignora la especificidad usando !important */
 .demo-important .importante-ejemplo {
     color: green !important;  /* ⚠️ Úsalo solo cuando sea estrictamente necesario */
     font-weight: bold;
@@ -343,6 +381,8 @@ h2 {
 /* ==========================================
    11. SELECTORES COMBINADOS
    ========================================== */
+
+/* Selector de Clase (.): Contenedor para el demo de combinadores */
 .demo-selectores {
     background-color: #f8f9fa;
     padding: 15px;
@@ -350,6 +390,7 @@ h2 {
     border: 1px dashed #ccc;
 }
 
+/* Selector de Clase (.): Caja gris padre */
 .caja-padre-sel {
     background-color: #d5dbdb;
     padding: 10px;
@@ -357,21 +398,21 @@ h2 {
     margin-bottom: 10px;
 }
 
-/* Selector de hijo DIRECTO (>) — solo el primer p */
+/* Selector de Hijo Directo (>): Selecciona únicamente elementos .p-directo que sean hijos inmediatos de .caja-padre-sel */
 .caja-padre-sel > .p-directo {
     color: #c0392b;
     font-weight: bold;
     margin: 0 0 5px 0;
 }
 
-/* Selector descendiente (espacio) — el p anidado dentro del div */
+/* Selector de Descendiente (espacio): Selecciona cualquier elemento .p-nieto que esté en cualquier nivel dentro de .caja-padre-sel (como un nieto) */
 .caja-padre-sel .p-nieto {
     color: #8e44ad;
     font-style: italic;
     margin: 5px 0 0 0;
 }
 
-/* Selector hermano adyacente (+) — el p justo después del h3 */
+/* Selector de Hermano Adyacente (+): Selecciona el primer elemento .p-adyacente que vaya inmediatamente después de .h3-demo al mismo nivel */
 .h3-demo + .p-adyacente {
     color: #e67e22;
     font-weight: bold;
@@ -379,7 +420,7 @@ h2 {
     padding-left: 8px;
 }
 
-/* Selector hermanos generales (~) — todos los p después del h3 */
+/* Selector de Hermano General (~): Selecciona todos los elementos .p-general que estén al mismo nivel y después de .h3-demo */
 .h3-demo ~ .p-general {
     color: #27ae60;
     border-left: 4px solid #27ae60;
@@ -390,6 +431,8 @@ h2 {
 /* ==========================================
    12. UNIDADES CSS Y SOMBRAS
    ========================================== */
+
+/* Selector de Clase (.): Contenedor flex para las cajas de unidades */
 .demo-unidades {
     display: flex;
     flex-direction: column;
@@ -397,7 +440,7 @@ h2 {
     margin-top: 10px;
 }
 
-/* Estilos base para las cajas de unidades */
+/* Selectores Agrupados por coma (,): Aplica estilos estéticos base a las cuatro clases de cajas juntas */
 .caja-px, .caja-em, .caja-rem, .caja-vw {
     background-color: #2c3e50;
     color: white;
@@ -406,12 +449,19 @@ h2 {
     text-align: center;
 }
 
-.caja-px  { width: 200px; }        /* Fijo: siempre 200px */
-.caja-em  { width: 2em; font-size: 80px; padding: 5px; } /* 2 * 80px = 160px */
-.caja-rem { font-size: 1.5rem; width: fit-content; }     /* 1.5 * 16px del root = 24px de letra */
-.caja-vw  { width: 50vw; }         /* 50% del ancho de la ventana del navegador */
+/* Selector de Clase (.): Ancho estático en píxeles */
+.caja-px  { width: 200px; }
 
-/* SOMBRAS */
+/* Selector de Clase (.): Ancho relativo al tamaño de letra del contenedor (em) */
+.caja-em  { width: 2em; font-size: 80px; padding: 5px; }
+
+/* Selector de Clase (.): Letra y tamaño relativo a la raíz HTML (rem) */
+.caja-rem { font-size: 1.5rem; width: fit-content; }
+
+/* Selector de Clase (.): Ancho relativo a la ventana del navegador (vw) */
+.caja-vw  { width: 50vw; }
+
+/* Selector de Clase (.): Contenedor flex de sombras */
 .demo-sombras {
     display: flex;
     gap: 20px;
@@ -419,7 +469,7 @@ h2 {
     flex-wrap: wrap;
 }
 
-/* box-shadow: desplaz-X desplaz-Y desenfoque color */
+/* Selector de Clase (.): Caja con sombra exterior (box-shadow) */
 .caja-box-shadow {
     background-color: #3498db;
     color: white;
@@ -430,7 +480,7 @@ h2 {
     font-weight: bold;
 }
 
-/* text-shadow: desplaz-X desplaz-Y desenfoque color */
+/* Selector de Clase (.): Caja con sombra interior en el texto (text-shadow) */
 .caja-text-shadow {
     background-color: #1a1a2e;
     color: white;
